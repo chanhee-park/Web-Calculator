@@ -1,53 +1,52 @@
-var result, operator, output, zero, dot;
-result = document.getElementById("result");
+var output, operator, zero, dot;
+var $result = $("#result");
 
-var btn_number = document.getElementsByClassName("btn__number");
-for (var i = 0; i < btn_number.length; i++) btn_number[i].addEventListener("click", function () {
-    output = result.innerHTML += this.value;
-}, false);
+$(".btn__number").click(function () {
+    output = $result.text($result.text() + this.value).text();
+    console.log(output);
+});
 
-var btn_operator = document.getElementsByClassName("btn__operator");
-for (var i = 0; i < btn_operator.length; i++) btn_operator[i].addEventListener("click", function () {
+$(".btn__operator").click(function () {
     operator = this.value;
-    if (result.innerHTML === "") {
-        result.innerHTML = "";
+    if (!($result.text() === "")) {
+        $result.text(output + operator);
+        console.log(output);
     }
-    else if (output) {
-        result.innerHTML = output + operator;
-    }
-}, false);
+});
 
-
-document.getElementById("zero").addEventListener("click", function () {
+// $("#calculate").click(function () {
+document.getElementById("calculate").addEventListener("click", function () {
     zero = this.value;
-    if (result.innerHTML === "") {
-        output = result.innerHTML = zero;
+    if ($result.text() === "") {
+        output = $result.text(zero).text();
     }
-    else if (result.innerHTML === output) {
-        output = result.innerHTML += zero;
+    else if ($result.text() === output) {
+        output = $result.text($result.text() + zero).text();
     }
 }, false);
 
+// $("#dot").click(function () {
 document.getElementById("dot").addEventListener("click", function () {
     dot = this.value;
-    if (result.innerHTML === "") {
-        output = result.innerHTML += "0.";
+    if ($result.text() === "") {
+        output = $result.text("0.").text();
     }
-    else if (result.innerHTML === output) {
-        result.innerHTML += ".";
+    else if ($result.text() === output) {
+        $result.text($result.text() + ".");
     }
 }, false);
 
-
+// $("#calculate").click(function () {
 document.getElementById("calculate").addEventListener("click", function () {
-    if (result.innerHTML === output) {
-        output = result.innerHTML = eval(output);
+    if ($result.text() === output) {
+        output=$result.text(eval(output)).text();
     }
     else {
-        result.innerHTML = "";
+        $result.text("");
     }
 }, false);
 
+// $("#delete").click(function () {
 document.getElementById("delete").addEventListener("click", function () {
-    result.innerHTML = "";
+    $result.text("");
 }, false);
