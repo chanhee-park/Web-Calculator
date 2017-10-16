@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <script type="text/javascript" src="./scripts/script.js" defer></script>
+
+</head>
+<body>
+<div class="background">
+    <div class="result" id="result"></div>
+    <div id="main">
+        <div class="row first-row">
+            <button id="delete" class="btn__delete btn__delete--size2 first-child">DEL</button>
+            <button value="%" class="btn__operator btn__operator--size1">%</button>
+            <button value="/" class="btn__operator btn__operator--size1">/</button>
+        </div>
+
+        <div class="row">
+            <button value="7" class="btn__number btn__number--size1 first-child">7</button>
+            <button value="8" class="btn__number btn__number--size1">8</button>
+            <button value="9" class="btn__number btn__number--size1">9</button>
+            <button value="*" class="btn__operator btn__operator--size1">*</button>
+        </div>
+
+        <div class="row">
+            <button value="4" class="btn__number btn__number--size1 first-child">4</button>
+            <button value="5" class="btn__number btn__number--size1">5</button>
+            <button value="6" class="btn__number btn__number--size1">6</button>
+            <button value="-" class="btn__operator btn__operator--size1">-</button>
+        </div>
+
+        <div class="row">
+            <button value="1" class="btn__number btn__number--size1 first-child">1</button>
+            <button value="2" class="btn__number btn__number--size1">2</button>
+            <button value="3" class="btn__number btn__number--size1">3</button>
+            <button value="+" class="btn__operator btn__operator--size1">+</button>
+        </div>
+
+        <div class="row">
+            <button value="0" id="zero" class="btn__zero btn__zero--size2 first-child zero">0</button>
+            <button value="." id="dot" class="btn__dot btn__dot--size1">.</button>
+            <button value="=" id="calculate" class="btn__calculate btn__calculate--size1">=</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
